@@ -174,10 +174,12 @@ const Index = () => {
           
           <div className="mt-16 flex justify-center">
             <Button
+              asChild
               className="h-16 w-full max-w-sm rounded-none bg-gold font-display text-xs font-bold tracking-[0.3em] text-navy-deep hover:bg-gold/90 luxury-shadow uppercase"
-              onClick={() => window.open(MAPS_URL, "_blank")}
             >
-              VER LOCALIZAÇÃO NO MAPA
+              <a href={MAPS_URL} target="_blank" rel="noreferrer">
+                VER LOCALIZAÇÃO NO MAPA
+              </a>
             </Button>
           </div>
         </div>
