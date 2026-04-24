@@ -16,7 +16,7 @@ declare global {
 const VENUE_NAME = "Chácara Ilha da Madeira";
 const VENUE_ADDRESS = "Av. Professor Hermógenes de Freitas Leitão Filho, 1000";
 const VENUE_CITY = "São Paulo, SP";
-const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=Ch%C3%A1cara+Ilha+da+Madeira+Av.+Professor+Herm%C3%B3genes+de+Freitas+Leit%C3%A3o+Filho+1000+S%C3%A3o+Paulo+SP";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Ch%C3%A1cara%20Ilha%20da%20Madeira%2C%20S%C3%A3o%20Paulo%20-%20SP";
 const WHATSAPP_GROUP = "https://chat.whatsapp.com/Gmco2p5wXveBhtfHToc7H9";
 
 const Confirmado = () => {
