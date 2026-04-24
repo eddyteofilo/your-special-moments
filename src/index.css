@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kaio & Débora — Wedding invite design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Deep navy background, warm gold accents, cream text */
+    --background: 222 47% 11%;
+    --foreground: 40 30% 92%;
+
+    --card: 218 40% 11%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 218 45% 10%;
+    --popover-foreground: 40 30% 92%;
+
+    /* Gold */
+    --primary: 38 55% 60%;
+    --primary-foreground: 218 50% 10%;
+
+    --secondary: 218 35% 16%;
+    --secondary-foreground: 40 30% 92%;
+
+    --muted: 218 30% 18%;
+    --muted-foreground: 40 15% 70%;
+
+    --accent: 38 55% 60%;
+    --accent-foreground: 218 50% 10%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 30% 95%;
+
+    --border: 38 35% 35% / 0.35;
+    --input: 218 30% 20%;
+    --ring: 38 55% 60%;
+
+    --radius: 0.25rem;
+
+    /* Brand tokens */
+    --gold: 38 55% 60%;
+    --gold-soft: 40 45% 75%;
+    --gold-deep: 36 50% 45%;
+    --navy-deep: 220 50% 6%;
+
+    --gradient-overlay: linear-gradient(
+      180deg,
+      hsl(220 50% 6% / 0.55) 0%,
+      hsl(220 50% 6% / 0.75) 50%,
+      hsl(220 50% 6% / 0.95) 100%
+    );
+    --shadow-gold: 0 10px 40px -10px hsl(38 55% 60% / 0.35);
+
+    --sidebar-background: 218 45% 8%;
+    --sidebar-foreground: 40 30% 92%;
+    --sidebar-primary: 38 55% 60%;
+    --sidebar-primary-foreground: 218 50% 10%;
+    --sidebar-accent: 218 35% 16%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 38 35% 35%;
+    --sidebar-ring: 38 55% 60%;
+  }
+
+  .dark {
+    --background: 218 45% 8%;
+    --foreground: 40 30% 92%;
+    --card: 218 40% 11%;
+    --card-foreground: 40 30% 92%;
+    --popover: 218 45% 10%;
+    --popover-foreground: 40 30% 92%;
+    --primary: 38 55% 60%;
+    --primary-foreground: 218 50% 10%;
+    --secondary: 218 35% 16%;
+    --secondary-foreground: 40 30% 92%;
+    --muted: 218 30% 18%;
+    --muted-foreground: 40 15% 70%;
+    --accent: 38 55% 60%;
+    --accent-foreground: 218 50% 10%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 30% 95%;
+    --border: 38 35% 35%;
+    --input: 218 30% 20%;
+    --ring: 38 55% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: "Cinzel", "Cormorant Garamond", serif;
+    letter-spacing: 0.08em;
+  }
+
+  .font-script {
+    font-family: "Great Vibes", cursive;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+  .tracking-widest-2 {
+    letter-spacing: 0.3em;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+}
