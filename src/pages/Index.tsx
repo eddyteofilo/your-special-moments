@@ -132,16 +132,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center gap-4">
-            <div className="p-3 bg-white shadow-xl">
-              <img 
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://maps.app.goo.gl/YyR9pZ7Y1N1XJk4J8")}`} 
-                alt="QR Code Localização"
-                className="h-32 w-32"
-              />
-            </div>
-            <span className="font-display text-[10px] tracking-widest text-gold/60">ESCANEIE PARA ABRIR NO GPS</span>
-          </div>
+
 
           <button
             onClick={scrollToForm}
@@ -235,11 +226,7 @@ const Index = () => {
               />
             </Field>
 
-            <div className="space-y-3">
-              <Label className="font-display text-xs tracking-widest-2 text-gold">
-                Você foi convidado(a) como *
-              </Label>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3 pt-2">
                 <ChoiceButton active={role === "PADRINHO"} onClick={() => setRole("PADRINHO")}>
                   PADRINHO
                 </ChoiceButton>
@@ -247,7 +234,7 @@ const Index = () => {
                   MADRINHA
                 </ChoiceButton>
               </div>
-            </div>
+
 
             <div className="space-y-3">
               <Label className="font-display text-xs tracking-widest-2 text-gold">
