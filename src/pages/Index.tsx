@@ -196,10 +196,10 @@ const Index = () => {
         <div className="mx-auto max-w-xl">
           <div className="text-center">
             <Divider label="RSVP" />
-            <h2 className="mt-8 font-serif text-5xl italic text-foreground sm:text-6xl">
+            <h2 className="mt-12 font-serif text-6xl italic text-foreground sm:text-7xl">
               Confirme sua presença
             </h2>
-            <p className="mt-6 font-serif text-xl text-muted-foreground">
+            <p className="mt-8 font-serif text-2xl text-muted-foreground leading-relaxed">
               Sua resposta é essencial para organizarmos tudo com carinho.
             </p>
           </div>
@@ -215,7 +215,7 @@ const Index = () => {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Seu nome"
                   maxLength={120}
-                  className="h-12 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
+                  className="h-16 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-2xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
                 />
               </Field>
 
@@ -225,7 +225,7 @@ const Index = () => {
                   onChange={(e) => setPhone(maskPhone(e.target.value))}
                   placeholder="(00) 00000-0000"
                   inputMode="numeric"
-                  className="h-12 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
+                  className="h-16 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-2xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
                 />
               </Field>
 
@@ -235,7 +235,7 @@ const Index = () => {
                   onChange={(e) => setCompanion(e.target.value)}
                   placeholder="Nome do acompanhante"
                   maxLength={120}
-                  className="h-12 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
+                  className="h-16 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-2xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
                 />
               </Field>
             </div>

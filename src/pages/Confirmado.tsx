@@ -25,50 +25,7 @@ const Confirmado = () => {
   const nome = params.get("nome") || "";
   const papel = params.get("papel"); // PADRINHO | MADRINHA
 
-  const handleDownload = async () => {
-    if (!inviteRef.current) return;
-    
-    toast.info("Gerando seu convite premium...");
-    
-    try {
-      const element = inviteRef.current;
-      await document.fonts.ready;
-      
-      element.style.display = "flex";
-      element.style.position = "static";
-      
-      const canvas = await window.html2canvas(element, {
-        scale: 4, // Ultra high quality
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: "#030712",
-        onclone: (clonedDoc: Document) => {
-          const el = clonedDoc.getElementById("printable-card");
-          if (el) { el.style.display = "flex"; el.style.position = "static"; }
-        }
-      });
-      
-      const imgData = canvas.toDataURL("image/png");
-      const { jsPDF } = window.jspdf;
-      const pdf = new jsPDF({ orientation: "p", unit: "mm", format: "a4" });
-      
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-      
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight, undefined, "FAST");
-      pdf.link(pdfWidth/4, pdfHeight - 50, pdfWidth/2, 20, { url: MAPS_URL });
-      
-      pdf.save(`Convite_Premium_${nome.replace(/\s+/g, "_")}.pdf`);
-      
-      element.style.display = "none";
-      element.style.position = "fixed";
-      
-      toast.success("Convite gerado com sucesso!");
-    } catch (error) {
-      console.error(error);
-      toast.error("Ocorreu um erro ao gerar o PDF.");
-    }
-    return (
+  return (
     <main className="min-h-screen bg-background px-6 py-20 text-foreground selection:bg-primary/30">
       <div className="mx-auto max-w-2xl text-center animate-fade-up">
         <Monogram />
