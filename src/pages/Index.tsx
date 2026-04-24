@@ -23,6 +23,8 @@ const schema = z.object({
 
 
 
+const MAPS_URL = "https://www.google.com/maps/dir/?api=1&destination=Ch%C3%A1cara+Ilha+da+Madeira+Av.+Professor+Herm%C3%B3genes+de+Freitas+Leit%C3%A3o+Filho+1000+S%C3%A3o+Paulo+SP";
+
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -74,103 +76,106 @@ const Index = () => {
   };
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground selection:bg-gold/30">
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy-deep px-6 py-20">
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, hsl(var(--gold)) 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--gold) 1px, transparent 0)', backgroundSize: '48px 48px' }} />
         
         <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center animate-fade-up">
-          <p className="font-display text-xs tracking-widest-2 text-gold/80">
-            Temos um convite muito especial para vocês!
+          <p className="font-display text-xs tracking-[0.4em] text-gold/80 uppercase">
+            Temos um convite especial para vocês
           </p>
           
-          <h2 className="mt-8 font-script text-5xl text-gold sm:text-7xl">
+          <h2 className="mt-10 font-script text-6xl text-gold sm:text-8xl drop-shadow-2xl">
             Aceitam ser nossos
           </h2>
           
-          <div className="mt-4 flex flex-col items-center">
-            <span className="font-script text-6xl text-gold sm:text-8xl">Padrinho</span>
-            <span className="font-display text-sm tracking-widest-2 text-gold/60">E</span>
-            <span className="font-script text-6xl text-gold sm:text-8xl">Madrinha</span>
+          <div className="mt-6 flex flex-col items-center gap-2">
+            <span className="font-script text-7xl text-gold sm:text-9xl">Padrinho</span>
+            <span className="font-display text-base tracking-[0.5em] text-gold/40 my-2">E</span>
+            <span className="font-script text-7xl text-gold sm:text-9xl">Madrinha</span>
           </div>
 
-          <div className="mt-12 flex items-center gap-4">
-            <Heart className="h-4 w-4 text-gold fill-gold" />
-            <h1 className="font-display text-3xl font-medium tracking-widest-2 text-gold sm:text-4xl">
-              KAIO E DEBORA
-            </h1>
-            <Heart className="h-4 w-4 text-gold fill-gold" />
+          <div className="mt-16 flex items-center gap-6 w-full max-w-xs">
+            <div className="h-px flex-1 bg-gold/30" />
+            <Heart className="h-5 w-5 text-gold fill-gold animate-pulse" />
+            <div className="h-px flex-1 bg-gold/30" />
           </div>
 
-          <p className="mt-10 max-w-lg font-serif text-lg leading-relaxed text-foreground/80 sm:text-xl">
+          <h1 className="mt-8 font-display text-4xl font-bold tracking-[0.3em] text-gold sm:text-5xl">
+            KAIO E DEBORA
+          </h1>
+
+          <p className="mt-12 max-w-lg font-serif text-xl leading-relaxed text-foreground/90 sm:text-2xl">
             Vocês foram escolhidos com muito amor para caminhar ao nosso lado, 
             guardando, cuidando e torcendo sempre por nós!
           </p>
           
-          <p className="mt-6 font-serif text-base italic text-gold/90">
+          <p className="mt-8 font-serif text-lg italic text-gold/90 border-b border-gold/20 pb-4">
             Obrigado por aceitarem esse convite e por fazerem parte da nossa história!
           </p>
 
-          <div className="mt-12 w-full max-w-md border-y border-gold/20 py-8">
+          <div className="mt-16 w-full max-w-md">
             <Countdown targetDate="2026-06-06T17:30:00" />
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3 items-center">
-            <div className="flex flex-col items-center gap-2">
-              <Calendar className="h-5 w-5 text-gold" />
-              <span className="font-display text-[10px] tracking-widest text-gold/60">DIA</span>
-              <span className="font-serif text-lg">06/06/2026</span>
+          <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-3 items-start w-full border-t border-gold/20 pt-12">
+            <div className="flex flex-col items-center gap-3">
+              <Calendar className="h-6 w-6 text-gold" />
+              <span className="font-display text-[11px] tracking-widest text-gold/60 uppercase">Data</span>
+              <span className="font-serif text-xl">06 de Junho, 2026</span>
             </div>
-            <div className="flex flex-col items-center gap-2 border-gold/20 sm:border-x sm:px-8">
-              <Clock className="h-5 w-5 text-gold" />
-              <span className="font-display text-[10px] tracking-widest text-gold/60">HORÁRIO</span>
-              <span className="font-serif text-lg">17:30hrs</span>
+            <div className="flex flex-col items-center gap-3 border-gold/20 sm:border-x sm:px-8">
+              <Clock className="h-6 w-6 text-gold" />
+              <span className="font-display text-[11px] tracking-widest text-gold/60 uppercase">Horário</span>
+              <span className="font-serif text-xl">17:30 Horas</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <MapPin className="h-5 w-5 text-gold" />
-              <span className="font-display text-[10px] tracking-widest text-gold/60">LOCAL</span>
-              <span className="font-serif text-lg leading-tight text-center">Chacara Ilha da Madeira<br/><span className="text-sm text-muted-foreground">São Paulo - SP</span></span>
+            <div className="flex flex-col items-center gap-3">
+              <MapPin className="h-6 w-6 text-gold" />
+              <span className="font-display text-[11px] tracking-widest text-gold/60 uppercase">Local</span>
+              <span className="font-serif text-xl leading-tight text-center">Chacara Ilha da Madeira<br/><span className="text-sm text-muted-foreground italic">São Paulo, SP</span></span>
             </div>
           </div>
 
-
-
           <button
             onClick={scrollToForm}
-            className="group mt-16 border border-gold px-12 py-4 font-display text-xs tracking-widest-2 text-gold transition-all hover:bg-gold hover:text-primary-foreground shadow-gold"
+            className="group mt-20 border-2 border-gold px-16 py-5 font-display text-[11px] font-bold tracking-[0.3em] text-gold transition-all hover:bg-gold hover:text-navy-deep luxury-shadow uppercase"
           >
             CONFIRMAR PRESENÇA
           </button>
         </div>
       </section>
 
-      <section className="relative bg-background px-6 py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <Heart className="mx-auto h-6 w-6 text-gold" />
-          <p className="mt-8 font-serif text-2xl italic leading-relaxed text-foreground/90 sm:text-3xl">
+      <section className="relative bg-background px-6 py-32 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-gold/0 to-gold/40" />
+        <div className="mx-auto max-w-3xl text-center relative z-10">
+          <Heart className="mx-auto h-8 w-8 text-gold fill-gold/10" />
+          <p className="mt-12 font-serif text-3xl italic leading-[1.8] text-foreground/95 sm:text-4xl">
             "Entre caminhos que se cruzaram e promessas que floresceram, Deus
             escreveu uma história onde dois se tornaram um. E nenhuma jornada é
             completa sem aqueles que caminham ao lado."
           </p>
-          <p className="mt-8 font-display text-xs tracking-widest-2 text-gold">
+          <p className="mt-10 font-display text-xs tracking-[0.5em] text-gold uppercase opacity-80">
             MATEUS 19:6
           </p>
         </div>
       </section>
 
-      <section className="relative bg-navy-deep/40 px-6 py-24">
+      <section className="relative bg-[#0F172A] px-6 py-32 border-y border-gold/10">
         <div className="mx-auto max-w-2xl text-center">
           <Divider label="COMO CHEGAR" />
-          <h2 className="mt-8 font-serif text-4xl italic text-foreground sm:text-5xl">
+          <h2 className="mt-10 font-serif text-5xl italic text-foreground sm:text-6xl">
             Localização
           </h2>
-          <p className="mt-4 font-serif text-lg text-muted-foreground">
-            Chácara Ilha da Madeira — São Paulo, SP
+          <p className="mt-6 font-serif text-xl text-muted-foreground leading-relaxed">
+            Chácara Ilha da Madeira<br/>
+            Av. Professor Hermógenes de Freitas Leitão Filho, 1000<br/>
+            São Paulo, SP
           </p>
           
-          <div className="mt-12 flex justify-center">
+          <div className="mt-16 flex justify-center">
             <Button
-              className="h-14 w-full max-w-xs rounded-none bg-gold font-display text-xs tracking-widest-2 text-primary-foreground hover:bg-gold/90 shadow-gold"
-              onClick={() => window.open("https://maps.app.goo.gl/YyR9pZ7Y1N1XJk4J8", "_blank")}
+              className="h-16 w-full max-w-sm rounded-none bg-gold font-display text-xs font-bold tracking-[0.3em] text-navy-deep hover:bg-gold/90 luxury-shadow uppercase"
+              onClick={() => window.open(MAPS_URL, "_blank")}
             >
               VER LOCALIZAÇÃO NO MAPA
             </Button>
@@ -178,69 +183,68 @@ const Index = () => {
         </div>
       </section>
 
-
-
-      <section ref={formRef} className="relative bg-secondary/40 px-6 py-24">
+      <section ref={formRef} className="relative bg-background px-6 py-32">
         <div className="mx-auto max-w-xl">
           <div className="text-center">
-            <Divider label="SUA RESPOSTA" />
-            <h2 className="mt-6 font-serif text-4xl italic text-foreground sm:text-5xl">
+            <Divider label="RSVP" />
+            <h2 className="mt-8 font-serif text-5xl italic text-foreground sm:text-6xl">
               Confirme sua presença
             </h2>
-            <p className="mt-4 font-serif text-lg text-muted-foreground">
-              Preencha os dados abaixo e nos diga se poderá nos acompanhar.
+            <p className="mt-6 font-serif text-xl text-muted-foreground">
+              Sua resposta é essencial para organizarmos tudo com carinho.
             </p>
           </div>
 
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="mt-12 space-y-7 border border-gold/30 bg-card/40 p-8 backdrop-blur-sm sm:p-10"
+            className="mt-16 space-y-10 glass-card p-10 sm:p-14 luxury-shadow"
           >
-            <Field label="Nome completo *">
-              <Input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Seu nome"
-                maxLength={120}
-                className="border-x-0 border-b border-t-0 border-gold/40 bg-transparent rounded-none px-0 focus-visible:ring-0 focus-visible:border-gold"
-              />
-            </Field>
+            <div className="space-y-8">
+              <Field label="Nome completo *">
+                <Input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Seu nome"
+                  maxLength={120}
+                  className="h-12 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
+                />
+              </Field>
 
-            <Field label="WhatsApp *">
-              <Input
-                value={phone}
-                onChange={(e) => setPhone(maskPhone(e.target.value))}
-                placeholder="(00) 00000-0000"
-                inputMode="numeric"
-                className="border-x-0 border-b border-t-0 border-gold/40 bg-transparent rounded-none px-0 focus-visible:ring-0 focus-visible:border-gold"
-              />
-            </Field>
+              <Field label="WhatsApp *">
+                <Input
+                  value={phone}
+                  onChange={(e) => setPhone(maskPhone(e.target.value))}
+                  placeholder="(00) 00000-0000"
+                  inputMode="numeric"
+                  className="h-12 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
+                />
+              </Field>
 
-            <Field label="Nome do acompanhante (opcional)">
-              <Input
-                value={companion}
-                onChange={(e) => setCompanion(e.target.value)}
-                placeholder="Nome do acompanhante"
-                maxLength={120}
-                className="border-x-0 border-b border-t-0 border-gold/40 bg-transparent rounded-none px-0 focus-visible:ring-0 focus-visible:border-gold"
-              />
-            </Field>
+              <Field label="Nome do acompanhante (opcional)">
+                <Input
+                  value={companion}
+                  onChange={(e) => setCompanion(e.target.value)}
+                  placeholder="Nome do acompanhante"
+                  maxLength={120}
+                  className="h-12 border-x-0 border-b-2 border-t-0 border-gold/20 bg-transparent rounded-none px-0 text-xl font-serif focus-visible:ring-0 focus-visible:border-gold transition-colors placeholder:text-muted-foreground/30"
+                />
+              </Field>
+            </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <ChoiceButton active={role === "PADRINHO"} onClick={() => setRole("PADRINHO")}>
-                  PADRINHO
-                </ChoiceButton>
-                <ChoiceButton active={role === "MADRINHA"} onClick={() => setRole("MADRINHA")}>
-                  MADRINHA
-                </ChoiceButton>
-              </div>
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <ChoiceButton active={role === "PADRINHO"} onClick={() => setRole("PADRINHO")}>
+                PADRINHO
+              </ChoiceButton>
+              <ChoiceButton active={role === "MADRINHA"} onClick={() => setRole("MADRINHA")}>
+                MADRINHA
+              </ChoiceButton>
+            </div>
 
-
-            <div className="space-y-3">
-              <Label className="font-display text-xs tracking-widest-2 text-gold">
+            <div className="space-y-4">
+              <Label className="font-display text-[11px] tracking-[0.2em] text-gold/60 uppercase">
                 De quem você será padrinho/madrinha? *
               </Label>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-4">
                 <ChoiceButton active={side === "KAIO"} onClick={() => setSide("KAIO")}>
                   DO KAIO
                 </ChoiceButton>
@@ -250,17 +254,17 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="grid gap-3 pt-4 sm:grid-cols-2">
+            <div className="grid gap-4 pt-10 sm:grid-cols-2">
               <Button
                 type="button"
                 disabled={loading !== null}
                 onClick={() => handleSubmit("accepted")}
-                className="h-12 rounded-none bg-gold font-display text-xs tracking-widest-2 text-primary-foreground hover:bg-gold/90"
+                className="h-16 rounded-none bg-gold font-display text-[11px] font-bold tracking-[0.3em] text-navy-deep hover:bg-gold/90 transition-all uppercase"
               >
                 {loading === "accepted" ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 h-5 w-4 animate-spin" />
                 ) : (
-                  <Check className="mr-2 h-4 w-4" />
+                  <Check className="mr-2 h-5 w-4" />
                 )}
                 ACEITAR CONVITE
               </Button>
@@ -269,12 +273,12 @@ const Index = () => {
                 variant="outline"
                 disabled={loading !== null}
                 onClick={() => handleSubmit("declined")}
-                className="h-12 rounded-none border-gold/60 bg-transparent font-display text-xs tracking-widest-2 text-gold hover:bg-gold/10 hover:text-gold"
+                className="h-16 rounded-none border-gold/30 bg-transparent font-display text-[11px] font-bold tracking-[0.3em] text-gold hover:bg-gold/5 hover:text-gold hover:border-gold transition-all uppercase"
               >
                 {loading === "declined" ? (
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  <Loader2 className="mr-2 h-5 w-4 animate-spin" />
                 ) : (
-                  <X className="mr-2 h-4 w-4" />
+                  <X className="mr-2 h-5 w-4" />
                 )}
                 RECUSAR
               </Button>

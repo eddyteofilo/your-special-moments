@@ -10,9 +10,9 @@ export const Monogram = () => (
 );
 
 export const Divider = ({ label }: { label: string }) => (
-  <div className="flex items-center justify-center gap-4 text-gold">
-    <span className="h-px w-12 bg-gold/60" />
-    <span className="font-display text-xs tracking-widest-2">{label}</span>
-    <span className="h-px w-12 bg-gold/60" />
+  <div className="flex items-center justify-center gap-6 text-gold/80">
+    <span className="h-px w-16 bg-gradient-to-r from-transparent to-gold/40" />
+    <span className="font-display text-[10px] tracking-[0.6em] uppercase">{label}</span>
+    <span className="h-px w-16 bg-gradient-to-l from-transparent to-gold/40" />
   </div>
 );

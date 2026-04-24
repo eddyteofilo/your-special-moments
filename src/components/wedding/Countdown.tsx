@@ -31,21 +31,21 @@ const Countdown = ({ targetDate }: { targetDate: string }) => {
   }, [targetDate]);
 
   return (
-    <div className="flex justify-center gap-6 text-gold">
-      <TimeUnit value={timeLeft.days} label="DIAS" />
-      <TimeUnit value={timeLeft.hours} label="HORAS" />
-      <TimeUnit value={timeLeft.minutes} label="MIN" />
-      <TimeUnit value={timeLeft.seconds} label="SEG" />
+    <div className="flex justify-center gap-10 text-gold">
+      <TimeUnit value={timeLeft.days} label="Dias" />
+      <TimeUnit value={timeLeft.hours} label="Horas" />
+      <TimeUnit value={timeLeft.minutes} label="Min" />
+      <TimeUnit value={timeLeft.seconds} label="Seg" />
     </div>
   );
 };
 
 const TimeUnit = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center">
-    <span className="font-display text-3xl font-light tracking-tighter sm:text-4xl">
+    <span className="font-display text-4xl font-light tracking-tighter sm:text-5xl border-b border-gold/10 pb-2 mb-2 w-16 text-center">
       {value.toString().padStart(2, "0")}
     </span>
-    <span className="mt-1 font-display text-[10px] tracking-widest text-gold/60">{label}</span>
+    <span className="font-display text-[9px] tracking-[0.4em] text-gold/50 uppercase">{label}</span>
   </div>
 );
 
