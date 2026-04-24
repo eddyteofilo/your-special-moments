@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    /* Premium HEX Palette */
-    --background: #030712;
+    /* Premium Purple/Blue HEX Palette */
+    --background: #0A0A14;
     --foreground: #F8F5F2;
 
-    --card: #0F172A;
+    --card: #14142B;
     --card-foreground: #F8F5F2;
 
-    --popover: #030712;
+    --popover: #0A0A14;
     --popover-foreground: #F8F5F2;
 
-    --primary: #C5A059;
-    --primary-foreground: #030712;
+    --primary: #8B5CF6;
+    --primary-foreground: #FFFFFF;
 
-    --secondary: #1E293B;
+    --secondary: #1E1B4B;
     --secondary-foreground: #F8F5F2;
 
-    --muted: #1E293B;
-    --muted-foreground: #94A3B8;
+    --muted: #1E1B4B;
+    --muted-foreground: #A78BFA;
 
-    --accent: #C5A059;
-    --accent-foreground: #030712;
+    --accent: #7C3AED;
+    --accent-foreground: #FFFFFF;
 
     --destructive: #EF4444;
     --destructive-foreground: #F8F5F2;
 
-    --border: #C5A05940;
-    --input: #1E293B;
-    --ring: #C5A059;
+    --border: #8B5CF640;
+    --input: #1E1B4B;
+    --ring: #8B5CF6;
 
     --radius: 0px;
 
-    /* Brand tokens */
-    --gold: #C5A059;
-    --gold-soft: #D4AF37;
-    --gold-deep: #A67C00;
-    --navy-deep: #030712;
+    /* Brand tokens - Purple Theme */
+    --gold: #8B5CF6;
+    --gold-soft: #A78BFA;
+    --gold-deep: #5B21B6;
+    --navy-deep: #0A0A14;
 
     --gradient-overlay: linear-gradient(
       180deg,
-      #03071288 0%,
-      #030712BB 50%,
-      #030712F2 100%
+      #0A0A1488 0%,
+      #0A0A14BB 50%,
+      #0A0A14F2 100%
     );
-    --shadow-gold: 0 10px 40px -10px #C5A05940;
+    --shadow-gold: 0 10px 40px -10px #8B5CF640;
   }
 }
   .dark {
@@ -84,12 +84,13 @@
     @apply bg-background text-foreground;
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 400;
+    font-size: 20px; /* Increased from default */
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, .font-display {
     font-family: "Cinzel", "Cormorant Garamond", serif;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
   }
 
   .font-script {
@@ -108,16 +109,16 @@
     border-color: var(--gold);
   }
   .tracking-widest-2 {
-    letter-spacing: 0.3em;
+    letter-spacing: 0.4em;
   }
   .glass-card {
-    background: #FFFFFF08;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid #FFFFFF15;
+    background: #FFFFFF0A;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid #FFFFFF1A;
   }
   .luxury-shadow {
-    box-shadow: 0 20px 50px -15px #00000088, 0 10px 30px -10px #C5A05933;
+    box-shadow: 0 25px 60px -15px #000000CC, 0 10px 30px -10px #8B5CF633;
   }
 }
 

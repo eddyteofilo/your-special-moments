@@ -80,81 +80,88 @@ const Index = () => {
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy-deep px-6 py-20">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--gold) 1px, transparent 0)', backgroundSize: '48px 48px' }} />
         
-        <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center text-center animate-fade-up">
-          <p className="font-display text-xs tracking-[0.4em] text-gold/80 uppercase">
+        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center animate-fade-up">
+          <p className="font-display text-base tracking-[0.6em] text-gold uppercase opacity-80">
             Temos um convite especial para vocês
           </p>
           
-          <h2 className="mt-10 font-script text-6xl text-gold sm:text-8xl drop-shadow-2xl">
+          <h2 className="mt-14 font-script text-8xl text-gold sm:text-9xl drop-shadow-2xl">
             Aceitam ser nossos
           </h2>
           
-          <div className="mt-6 flex flex-col items-center gap-2">
-            <span className="font-script text-7xl text-gold sm:text-9xl">Padrinho</span>
-            <span className="font-display text-base tracking-[0.5em] text-gold/40 my-2">E</span>
-            <span className="font-script text-7xl text-gold sm:text-9xl">Madrinha</span>
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <span className="font-script text-[120px] text-gold sm:text-[160px] leading-[0.5]">Padrinho</span>
+            <span className="font-display text-xl tracking-[0.8em] text-gold/40 my-8 uppercase">E</span>
+            <span className="font-script text-[120px] text-gold sm:text-[160px] leading-[0.5]">Madrinha</span>
           </div>
 
-          <div className="mt-16 flex items-center gap-6 w-full max-w-xs">
+          <div className="mt-20 flex items-center gap-8 w-full max-w-sm">
             <div className="h-px flex-1 bg-gold/30" />
-            <Heart className="h-5 w-5 text-gold fill-gold animate-pulse" />
+            <Heart className="h-8 w-8 text-gold fill-gold animate-pulse" />
             <div className="h-px flex-1 bg-gold/30" />
           </div>
 
-          <h1 className="mt-8 font-display text-4xl font-bold tracking-[0.3em] text-gold sm:text-5xl">
+          <h1 className="mt-12 font-display text-5xl font-bold tracking-[0.4em] text-gold sm:text-7xl">
             KAIO E DEBORA
           </h1>
 
-          <p className="mt-12 max-w-lg font-serif text-xl leading-relaxed text-foreground/90 sm:text-2xl">
-            Vocês foram escolhidos com muito amor para caminhar ao nosso lado, 
-            guardando, cuidando e torcendo sempre por nós!
+          <p className="mt-16 max-w-2xl font-serif text-2xl leading-relaxed text-foreground/90 sm:text-3xl italic">
+            "Vocês foram escolhidos com muito amor para caminhar ao nosso lado, 
+            guardando, cuidando e torcendo sempre por nós!"
           </p>
           
-          <p className="mt-8 font-serif text-lg italic text-gold/90 border-b border-gold/20 pb-4">
+          <p className="mt-12 font-serif text-2xl italic text-gold border-b border-gold/20 pb-8">
             Obrigado por aceitarem esse convite e por fazerem parte da nossa história!
           </p>
 
-          <div className="mt-16 w-full max-w-md">
+          <div className="mt-20 w-full max-w-2xl">
             <Countdown targetDate="2026-06-06T17:30:00" />
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-3 items-start w-full border-t border-gold/20 pt-12">
-            <div className="flex flex-col items-center gap-3">
-              <Calendar className="h-6 w-6 text-gold" />
-              <span className="font-display text-[11px] tracking-widest text-gold/60 uppercase">Data</span>
-              <span className="font-serif text-xl">06 de Junho, 2026</span>
+          <div className="mt-20 grid grid-cols-1 gap-16 sm:grid-cols-3 items-start w-full border-t border-gold/20 pt-16">
+            <div className="flex flex-col items-center gap-4">
+              <Calendar className="h-8 w-8 text-gold" />
+              <span className="font-display text-sm tracking-[0.3em] text-gold/60 uppercase">Data</span>
+              <span className="font-serif text-3xl font-medium">06 . 06 . 2026</span>
             </div>
-            <div className="flex flex-col items-center gap-3 border-gold/20 sm:border-x sm:px-8">
-              <Clock className="h-6 w-6 text-gold" />
-              <span className="font-display text-[11px] tracking-widest text-gold/60 uppercase">Horário</span>
-              <span className="font-serif text-xl">17:30 Horas</span>
+            <div className="flex flex-col items-center gap-4 border-gold/20 sm:border-x sm:px-12">
+              <Clock className="h-8 w-8 text-gold" />
+              <span className="font-display text-sm tracking-[0.3em] text-gold/60 uppercase">Horário</span>
+              <span className="font-serif text-3xl font-medium">17:30 Horas</span>
             </div>
-            <div className="flex flex-col items-center gap-3">
-              <MapPin className="h-6 w-6 text-gold" />
-              <span className="font-display text-[11px] tracking-widest text-gold/60 uppercase">Local</span>
-              <span className="font-serif text-xl leading-tight text-center">Chacara Ilha da Madeira<br/><span className="text-sm text-muted-foreground italic">São Paulo, SP</span></span>
+            <div className="flex flex-col items-center gap-4">
+              <MapPin className="h-8 w-8 text-gold" />
+              <span className="font-display text-sm tracking-[0.3em] text-gold/60 uppercase">Local</span>
+              <span className="font-serif text-3xl leading-tight text-center font-medium">Chácara Ilha da Madeira<br/><span className="text-xl text-muted-foreground italic font-normal">São Paulo, SP</span></span>
             </div>
           </div>
 
           <button
             onClick={scrollToForm}
-            className="group mt-20 border-2 border-gold px-16 py-5 font-display text-[11px] font-bold tracking-[0.3em] text-gold transition-all hover:bg-gold hover:text-navy-deep luxury-shadow uppercase"
+            className="group mt-24 border-2 border-gold px-24 py-8 font-display text-sm font-bold tracking-[0.4em] text-gold transition-all hover:bg-gold hover:text-white luxury-shadow uppercase active:scale-95"
           >
             CONFIRMAR PRESENÇA
           </button>
         </div>
       </section>
 
-      <section className="relative bg-background px-6 py-32 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-gold/0 to-gold/40" />
-        <div className="mx-auto max-w-3xl text-center relative z-10">
-          <Heart className="mx-auto h-8 w-8 text-gold fill-gold/10" />
-          <p className="mt-12 font-serif text-3xl italic leading-[1.8] text-foreground/95 sm:text-4xl">
+      <section className="relative bg-background px-6 py-40 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-40 bg-gradient-to-b from-gold/0 to-gold/40" />
+        <div className="mx-auto max-w-4xl text-center relative z-10">
+          <Divider label="PRESENÇA" />
+          <h2 className="mt-16 font-serif text-6xl italic text-foreground sm:text-8xl">
+            Confirmar RSVP
+          </h2>
+          <p className="mt-10 font-serif text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Por favor, preencha os dados abaixo para confirmarmos sua presença neste dia tão especial para nós.
+          </p>
+          <Heart className="mx-auto mt-16 h-8 w-8 text-gold fill-gold/10" />
+          <p className="mt-12 font-serif text-4xl italic leading-[1.8] text-foreground/95 sm:text-5xl">
             "Entre caminhos que se cruzaram e promessas que floresceram, Deus
             escreveu uma história onde dois se tornaram um. E nenhuma jornada é
             completa sem aqueles que caminham ao lado."
           </p>
-          <p className="mt-10 font-display text-xs tracking-[0.5em] text-gold uppercase opacity-80">
+          <p className="mt-10 font-display text-sm tracking-[0.5em] text-gold uppercase opacity-80">
             MATEUS 19:6
           </p>
         </div>
@@ -175,7 +182,7 @@ const Index = () => {
           <div className="mt-16 flex justify-center">
             <Button
               asChild
-              className="h-16 w-full max-w-sm rounded-none bg-gold font-display text-xs font-bold tracking-[0.3em] text-navy-deep hover:bg-gold/90 luxury-shadow uppercase"
+              className="h-20 w-full max-w-sm rounded-none bg-gold font-display text-sm font-bold tracking-[0.3em] text-navy-deep hover:bg-gold/90 luxury-shadow uppercase"
             >
               <a href={MAPS_URL} target="_blank" rel="noreferrer">
                 VER LOCALIZAÇÃO NO MAPA
@@ -242,8 +249,8 @@ const Index = () => {
               </ChoiceButton>
             </div>
 
-            <div className="space-y-4">
-              <Label className="font-display text-[11px] tracking-[0.2em] text-gold/60 uppercase">
+            <div className="space-y-6">
+              <Label className="font-display text-base tracking-[0.3em] text-gold/60 uppercase">
                 De quem você será padrinho/madrinha? *
               </Label>
               <div className="grid grid-cols-2 gap-4">
@@ -256,17 +263,17 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="grid gap-4 pt-10 sm:grid-cols-2">
+            <div className="grid gap-6 pt-12 sm:grid-cols-2">
               <Button
                 type="button"
                 disabled={loading !== null}
                 onClick={() => handleSubmit("accepted")}
-                className="h-16 rounded-none bg-gold font-display text-[11px] font-bold tracking-[0.3em] text-navy-deep hover:bg-gold/90 transition-all uppercase"
+                className="h-20 rounded-none bg-gold font-display text-sm font-bold tracking-[0.3em] text-white hover:bg-gold/90 transition-all uppercase"
               >
                 {loading === "accepted" ? (
-                  <Loader2 className="mr-2 h-5 w-4 animate-spin" />
+                  <Loader2 className="mr-3 h-6 w-6 animate-spin" />
                 ) : (
-                  <Check className="mr-2 h-5 w-4" />
+                  <Check className="mr-3 h-6 w-6" />
                 )}
                 ACEITAR CONVITE
               </Button>
@@ -275,12 +282,12 @@ const Index = () => {
                 variant="outline"
                 disabled={loading !== null}
                 onClick={() => handleSubmit("declined")}
-                className="h-16 rounded-none border-gold/30 bg-transparent font-display text-[11px] font-bold tracking-[0.3em] text-gold hover:bg-gold/5 hover:text-gold hover:border-gold transition-all uppercase"
+                className="h-20 rounded-none border-gold/30 bg-transparent font-display text-sm font-bold tracking-[0.3em] text-gold hover:bg-gold/5 hover:text-gold hover:border-gold transition-all uppercase"
               >
                 {loading === "declined" ? (
-                  <Loader2 className="mr-2 h-5 w-4 animate-spin" />
+                  <Loader2 className="mr-3 h-6 w-6 animate-spin" />
                 ) : (
-                  <X className="mr-2 h-5 w-4" />
+                  <X className="mr-3 h-6 w-6" />
                 )}
                 RECUSAR
               </Button>
@@ -304,8 +311,8 @@ const Index = () => {
 };
 
 const Field = ({ label, children }: { label: string; children: React.ReactNode }) => (
-  <div className="space-y-2">
-    <Label className="font-display text-xs tracking-widest-2 text-gold">{label}</Label>
+  <div className="space-y-4">
+    <Label className="font-display text-base tracking-[0.3em] text-gold uppercase">{label}</Label>
     {children}
   </div>
 );
@@ -323,9 +330,9 @@ const ChoiceButton = ({
     type="button"
     onClick={onClick}
     className={cn(
-      "border py-3 font-display text-xs tracking-widest-2 transition-all",
+      "border py-5 font-display text-sm font-bold tracking-[0.3em] transition-all",
       active
-        ? "border-gold bg-gold text-primary-foreground"
+        ? "border-gold bg-gold text-white"
         : "border-gold/40 text-foreground/80 hover:border-gold hover:text-gold",
     )}
   >

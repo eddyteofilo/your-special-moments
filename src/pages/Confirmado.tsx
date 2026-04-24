@@ -68,83 +68,83 @@ const Confirmado = () => {
       console.error(error);
       toast.error("Ocorreu um erro ao gerar o PDF.");
     }
-  };
-
-  return (
-    <main className="min-h-screen bg-background px-6 py-20 text-foreground selection:bg-gold/30">
+    return (
+    <main className="min-h-screen bg-background px-6 py-20 text-foreground selection:bg-primary/30">
       <div className="mx-auto max-w-2xl text-center animate-fade-up">
         <Monogram />
-        <p className="mt-10 font-display text-xs tracking-[0.5em] text-gold uppercase">
+        <p className="mt-10 font-display text-sm tracking-[0.5em] text-gold uppercase">
           Presença Confirmada
         </p>
-        <h1 className="mt-6 font-serif text-5xl italic sm:text-6xl text-foreground leading-tight">
+        <h1 className="mt-8 font-serif text-6xl italic sm:text-7xl text-foreground leading-tight">
           {nome ? `Que alegria, ${nome}!` : "Que alegria ter você conosco!"}
         </h1>
-        <p className="mt-6 font-serif text-xl text-muted-foreground max-w-md mx-auto">
-          Sua presença tornará esse dia inesquecível. Prepare o coração!
+        <p className="mt-8 font-serif text-2xl text-muted-foreground max-w-lg mx-auto leading-relaxed">
+          Sua presença tornará esse dia inesquecível. Prepare o coração para momentos emocionantes!
         </p>
 
-        <div className="mt-16 glass-card p-12 luxury-shadow relative overflow-hidden">
+        <div className="mt-20 glass-card p-14 luxury-shadow relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gold" />
           <Divider label="DETALHES DO EVENTO" />
-          <h2 className="mt-8 font-serif text-4xl italic text-foreground">Kaio & Débora</h2>
+          <h2 className="mt-10 font-serif text-5xl italic text-foreground">Kaio & Débora</h2>
 
-          <ul className="mt-10 space-y-6 text-left font-serif text-xl text-foreground/90 mx-auto max-w-xs">
-            <Item icon={<Calendar className="h-6 w-6 text-gold" />} label="06 de Junho de 2026" />
-            <Item icon={<Clock className="h-6 w-6 text-gold" />} label="17h30 — Cerimônia" />
+          <ul className="mt-12 space-y-8 text-left font-serif text-2xl text-foreground/90 mx-auto max-w-xs">
+            <Item icon={<Calendar className="h-7 w-7 text-gold" />} label="06 de Junho de 2026" />
+            <Item icon={<Clock className="h-7 w-7 text-gold" />} label="17h30 — Cerimônia" />
             <Item
-              icon={<MapPin className="h-6 w-6 text-gold" />}
+              icon={<MapPin className="h-7 w-7 text-gold" />}
               label={VENUE_NAME}
             />
           </ul>
         </div>
 
-        <div className="mt-10 glass-card p-10 text-left border-gold/10">
-          <p className="font-display text-[11px] tracking-[0.3em] text-gold uppercase mb-6 opacity-60">Sugestão de Traje</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="mt-12 glass-card p-12 text-left border-gold/10">
+          <p className="font-display text-xs tracking-[0.4em] text-gold uppercase mb-8 opacity-60">Sugestão de Traje</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div>
-              <p className="font-display text-[10px] tracking-[0.4em] text-gold/40 mb-2 uppercase">Feminino</p>
-              <p className="font-serif text-2xl italic text-foreground">Vestido Azul Celeste Claro</p>
+              <p className="font-display text-[12px] tracking-[0.5em] text-gold/40 mb-3 uppercase">Feminino</p>
+              <p className="font-serif text-3xl italic text-foreground">Vestido Azul Celeste Claro</p>
             </div>
-            <div className="pt-8 border-t border-gold/10 sm:pt-0 sm:border-t-0 sm:border-l sm:pl-10">
-              <p className="font-display text-[10px] tracking-[0.4em] text-gold/40 mb-2 uppercase">Masculino</p>
-              <p className="font-serif text-2xl italic text-foreground">Terno Azul Royal Escuro</p>
+            <div className="pt-10 border-t border-gold/10 sm:pt-0 sm:border-t-0 sm:border-l sm:pl-12">
+              <p className="font-display text-[12px] tracking-[0.5em] text-gold/40 mb-3 uppercase">Masculino</p>
+              <p className="font-serif text-3xl italic text-foreground">Terno Azul Royal Escuro</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          <Button
-            onClick={handleDownload}
-            className="h-16 rounded-none bg-gold font-display text-[11px] font-bold tracking-[0.3em] text-navy-deep hover:bg-gold/90 transition-all uppercase sm:col-span-1 shadow-lg"
-          >
-            <Download className="mr-2 h-5 w-5" /> BAIXAR EM PDF
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="h-16 rounded-none border-gold/30 bg-transparent font-display text-[11px] font-bold tracking-[0.3em] text-gold hover:bg-gold/5 hover:border-gold transition-all uppercase"
-          >
-            <a href={MAPS_URL} target="_blank" rel="noreferrer">
-              <MapPin className="mr-2 h-5 w-5" /> LOCALIZAÇÃO
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="h-16 rounded-none border-gold/30 bg-transparent font-display text-[11px] font-bold tracking-[0.3em] text-gold hover:bg-gold/5 hover:border-gold transition-all uppercase"
-          >
-            <a href={WHATSAPP_GROUP} target="_blank" rel="noreferrer">
-              <MessageCircle className="mr-2 h-5 w-5" /> WHATSAPP
-            </a>
-          </Button>
+        <div className="mt-16 flex flex-col gap-6 items-center">
+          <div className="grid gap-6 w-full sm:grid-cols-2 max-w-xl">
+            <Button
+              asChild
+              variant="outline"
+              className="h-20 rounded-none border-gold/30 bg-transparent font-display text-xs font-bold tracking-[0.4em] text-gold hover:bg-gold/5 hover:border-gold transition-all uppercase shadow-xl"
+            >
+              <a href={MAPS_URL} target="_blank" rel="noreferrer">
+                <MapPin className="mr-3 h-6 w-6" /> LOCALIZAÇÃO
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-20 rounded-none border-gold/30 bg-transparent font-display text-xs font-bold tracking-[0.4em] text-gold hover:bg-gold/5 hover:border-gold transition-all uppercase shadow-xl"
+            >
+              <a href={WHATSAPP_GROUP} target="_blank" rel="noreferrer">
+                <MessageCircle className="mr-3 h-6 w-6" /> GRUPO DOS PADRINHOS
+              </a>
+            </Button>
+          </div>
+          
+          <div className="max-w-md mt-4 text-center">
+            <p className="font-serif text-xl italic text-muted-foreground leading-relaxed">
+              Padrinhos, entrem no grupo para acompanharem todas as novidades, orientações e combinarmos os detalhes para o grande dia!
+            </p>
+          </div>
         </div>
 
         <Link
           to="/"
-          className="mt-16 inline-flex items-center gap-3 font-display text-[11px] tracking-[0.4em] text-gold/60 hover:text-gold transition-colors uppercase"
+          className="mt-20 inline-flex items-center gap-4 font-display text-xs tracking-[0.5em] text-gold/60 hover:text-gold transition-colors uppercase"
         >
-          <ArrowLeft className="h-4 w-4" /> VOLTAR AO INÍCIO
+          <ArrowLeft className="h-5 w-5" /> VOLTAR AO INÍCIO
         </Link>
       </div>
 
